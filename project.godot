@@ -9,10 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "RigidBody",
+"base": "HackableEntity",
 "class": "Block",
 "language": "GDScript",
 "path": "res://entities/Block.gd"
+}, {
+"base": "RigidBody",
+"class": "HackableEntity",
+"language": "GDScript",
+"path": "res://entities/HackableEntity.gd"
 }, {
 "base": "KinematicBody",
 "class": "Player",
@@ -21,6 +26,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Block": "",
+"HackableEntity": "",
 "Player": ""
 }
 

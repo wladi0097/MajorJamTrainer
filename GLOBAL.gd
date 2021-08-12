@@ -2,18 +2,18 @@ extends Node
 
 var currentCamera: Camera
 var player: Player
-var blocks = []
+var hackableEntities = []
 
 func showWireFrames():
-	for block in self.blocks:
-		block.showWireFrame()
+	for entity in self.hackableEntities:
+		entity.showWireFrame()
 
 func hideWireFrames():
-	for block in self.blocks:
-		block.hideWireFrame()
+	for entity in self.hackableEntities:
+		entity.hideWireFrame()
 
-func getBlockById(id: String) -> Block:
-	for block in self.blocks:
-		if block.blockId == id:
-			return block
+func getHackableEntityById(id: String) -> HackableEntity:
+	for entity in self.hackableEntities:
+		if entity.id == id:
+			return entity
 	return null

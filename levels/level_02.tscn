@@ -93,7 +93,7 @@ __meta__ = {
 
 [node name="Block" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11535, 0.593401, 1.69688 )
-blockId = "120"
+id = "120"
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297597, 1.05452, 0.63932 )
