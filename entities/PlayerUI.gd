@@ -1,8 +1,9 @@
 extends HBoxContainer
 
 
-onready var rightBlackBar = $ColorRect2
-onready var hackUi : CanvasLayer = $ColorRect/CanvasLayer
+onready var rightBlackBar = $RightBar
+onready var hackUi : CanvasLayer = $LeftBar/CanvasLayer
+onready var hackUiButton : Button = $LeftBar/MaximizeButton
 
 var isHackUiOpen = false
 var hasHackUiOpened = false
@@ -25,16 +26,27 @@ func _process(delta):
 		hasHackUiOpened = false
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _input(event):
-	if event.is_action_pressed("move_jump"):
-		if isHackUiOpen:
-			isHackUiOpen = false
-		else:
-			isHackUiOpen = true
+func _input(event):	
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event.is_action_pressed("click"):
+		var hackUiButtonRect = hackUiButton.get_rect()
+		if hackUiButtonRect.has_point(event.position):
+			pass
+			
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pass
 
 
-func _on_Button_button_down():
-	print( "Test")
-	pass # Replace with function body.
+func _on_MaximizeButton_button_down():
+	if isHackUiOpen:
+		isHackUiOpen = false
+	else:
+		isHackUiOpen = true
+	pass
+
+
+func _on_MinizeButton_button_down():
+	isHackUiOpen = false
+	pass

@@ -18,7 +18,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="LeftBar" type="ColorRect" parent="."]
 margin_right = 226.0
 margin_bottom = 720.0
 mouse_filter = 1
@@ -26,11 +26,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="ColorRect"]
+[node name="CanvasLayer" type="CanvasLayer" parent="LeftBar"]
 offset = Vector2( -500, 0 )
 transform = Transform2D( 1, 0, 0, 1, -500, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="LeftBar/CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -45,42 +45,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CanvasLayer"]
-anchor_left = 0.037
-anchor_top = 0.183
-anchor_right = 0.364
-anchor_bottom = 0.842
-margin_left = -31.36
-margin_top = -19.76
-margin_right = -344.92
-margin_bottom = -454.24
+[node name="RichTextLabel" type="RichTextLabel" parent="LeftBar/CanvasLayer"]
+margin_left = 43.0
+margin_top = 126.0
+margin_right = 475.0
+margin_bottom = 574.0
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+text = "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect/CanvasLayer/VBoxContainer"]
-margin_right = 200.0
-margin_bottom = 25.0
-custom_fonts/font = ExtResource( 4 )
-text = "-- Global --"
+[node name="MinizeButton" type="Button" parent="LeftBar/CanvasLayer"]
+margin_left = 394.53
+margin_top = 88.0595
+margin_right = 491.53
+margin_bottom = 108.059
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CheckBox" type="CheckBox" parent="ColorRect/CanvasLayer/VBoxContainer"]
-margin_top = 29.0
-margin_right = 200.0
-margin_bottom = 62.0
-custom_fonts/font = ExtResource( 4 )
-text = "WireFrames"
-
-[node name="Label2" type="Label" parent="ColorRect/CanvasLayer/VBoxContainer"]
-margin_top = 66.0
-margin_right = 200.0
-margin_bottom = 91.0
-custom_fonts/font = ExtResource( 4 )
-text = "-- Entity edit --"
-
-[node name="Button" type="Button" parent="ColorRect"]
-margin_right = 60.0
-margin_bottom = 54.0
+[node name="MaximizeButton" type="Button" parent="LeftBar"]
+margin_left = 27.5461
+margin_top = 25.4271
+margin_right = 87.5461
+margin_bottom = 79.4271
 icon = ExtResource( 5 )
 flat = true
 __meta__ = {
@@ -105,7 +96,7 @@ render_target_update_mode = 3
 [node name="KinematicBody" parent="GameViewport/Viewport" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.678716, 0 )
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="RightBar" type="ColorRect" parent="."]
 margin_left = 1054.0
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -113,4 +104,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )
 
-[connection signal="button_down" from="ColorRect/Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="LeftBar/CanvasLayer/MinizeButton" to="." method="_on_MinizeButton_button_down"]
+[connection signal="button_down" from="LeftBar/MaximizeButton" to="." method="_on_MaximizeButton_button_down"]
