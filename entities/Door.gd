@@ -17,13 +17,6 @@ onready var openTransformRightDoorOut = rightDoorOut.transform.translated(Vector
 
 var isOpen = false
 
-func _input(event):
-	if event.is_action_pressed("move_jump"):
-		if isOpen:
-			close()
-		else:
-			open()
-
 func open():
 	isOpen = true
 	pass
