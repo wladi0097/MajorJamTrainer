@@ -2,7 +2,7 @@ extends KinematicBody
 
 onready var camera = $Pivot/Camera
 var gravity = -5
-var max_speed = 2
+var max_speed = 1
 var mouse_sensitivity = 0.004
 var jump_speed = 2
 
@@ -48,7 +48,12 @@ func _physics_process(delta):
 	
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
-	velocity = move_and_slide(velocity, Vector3.UP, true)
+	velocity = move_and_slide(velocity, Vector3.UP, true, 4, PI/4, false)
+	
+	for i in get_slide_count():
+		var collision: KinematicCollision = get_slide_collision(i)
+		if collision.collider is RigidBody:
+			collision.collider.apply_central_impulse(-collision.normal)
 	
 	if jump and is_on_floor():
 		velocity.y = jump_speed

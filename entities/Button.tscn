@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://models/button.glb" type="PackedScene" id=1]
+[ext_resource path="res://entities/Button.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.173987, 0.0639894, 0.169377 )
+
+[node name="Button" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="light" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33615, -0.0541876, 0.0140463 )
+visible = false
+light_color = Color( 1, 0, 0, 1 )
+omni_range = 0.6
+
+[node name="button" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.343966, -0.255028, 0 )
+
+[node name="buttonPressCollision" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="buttonPressCollision"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346866, -0.212535, 0 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="buttonPressCollision" to="." method="_on_buttonPressCollision_body_entered"]
+[connection signal="body_exited" from="buttonPressCollision" to="." method="_on_buttonPressCollision_body_exited"]
