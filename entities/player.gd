@@ -1,4 +1,5 @@
 extends KinematicBody
+class_name Player
 
 onready var camera = $Pivot/Camera
 var gravity = -5
@@ -10,6 +11,8 @@ var jump = false
 var velocity = Vector3()
 
 func _ready():
+	GLOBAL.currentCamera = camera
+	GLOBAL.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
