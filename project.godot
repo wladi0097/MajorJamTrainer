@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "RigidBody",
+"class": "Block",
+"language": "GDScript",
+"path": "res://entities/Block.gd"
+}, {
 "base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
 "path": "res://entities/player.gd"
 } ]
 _global_script_class_icons={
+"Block": "",
 "Player": ""
 }
 

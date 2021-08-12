@@ -5,35 +5,35 @@
 [ext_resource path="res://textures/wireframe.png" type="Texture" id=3]
 [ext_resource path="res://textures/main_font.tres" type="DynamicFont" id=4]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=13]
 flags_transparent = true
 flags_unshaded = true
 albedo_texture = ExtResource( 3 )
 uv1_scale = Vector3( 3, 2, 2 )
 
-[sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="CubeMesh" id=14]
+material = SubResource( 13 )
 size = Vector3( 0.22, 0.22, 0.22 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=15]
 flags_transparent = true
 flags_unshaded = true
 flags_albedo_tex_force_srgb = true
 
-[sub_resource type="QuadMesh" id=4]
-material = SubResource( 3 )
+[sub_resource type="QuadMesh" id=16]
+material = SubResource( 15 )
 size = Vector2( 0.1, 0.05 )
 
-[sub_resource type="ViewportTexture" id=5]
+[sub_resource type="ViewportTexture" id=17]
 viewport_path = NodePath("WireFrame/Viewport")
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=18]
 resource_local_to_scene = true
 flags_transparent = true
 flags_unshaded = true
 flags_albedo_tex_force_srgb = true
 params_billboard_mode = 2
-albedo_texture = SubResource( 5 )
+albedo_texture = SubResource( 17 )
 
 [sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.505882, 0.427451, 0.333333, 1 )
@@ -69,7 +69,7 @@ script = ExtResource( 1 )
 [node name="WireFrame" type="Spatial" parent="."]
 
 [node name="glowAround" type="MeshInstance" parent="WireFrame"]
-mesh = SubResource( 2 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="Viewport" type="Viewport" parent="WireFrame"]
@@ -103,8 +103,8 @@ valign = 1
 
 [node name="displayPanel" type="MeshInstance" parent="WireFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.155172, 0 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
+mesh = SubResource( 16 )
+material/0 = SubResource( 18 )
 
 [node name="DieParticles" type="CPUParticles" parent="."]
 emitting = false

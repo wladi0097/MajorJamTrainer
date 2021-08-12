@@ -12,9 +12,6 @@ onready var materialButtonEnabled : Material = preload('res://models/button_red_
 signal button_enabled
 signal button_disabled
 
-func _ready():
-	pass 
-
 func _on_buttonPressCollision_body_entered(body):
 	if self.buttonPressCollision.get_overlapping_bodies().size() == 1:
 		emit_signal("button_enabled")
