@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleMesh" id=2]
+radius = 0.005
+mid_height = 2.0
+
+[node name="MeshInstance" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518475, -0.245565, 1.16093 )
+mesh = SubResource( 2 )
+material/0 = null
