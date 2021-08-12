@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://models/meshes.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://entities/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/Block.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/Laser.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/Wire.tscn" type="PackedScene" id=6]
+[ext_resource path="res://models/Laserbase.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/level_02.lmbake" type="BakedLightmapData" id=8]
+[ext_resource path="res://levels/level_03.gd" type="Script" id=9]
+
+[sub_resource type="Environment" id=1]
+
+[node name="Level_03" type="Spatial"]
+script = ExtResource( 9 )
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+use_in_baked_light = true
+cell_size = Vector3( 0.5, 0.5, 0.5 )
+data = {
+"cells": PoolIntArray( 0, 0, 786433, 65534, 0, 786433, 65537, 0, 458752, 131069, 0, 1048576, 131072, 0, 1245185, 196606, 0, 1245185, 131070, 1, 589824, 65536, 65533, 0, 0, 65534, 786433, 65534, 65534, 786433, 65537, 65534, 458752, 131069, 65534, 1048576, 131072, 65534, 1245185, 196606, 65534, 1245185 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 2, 0 )
+}
+
+[node name="Block" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.410471, 0.430924, -0.42406 )
+
+[node name="DoorButton" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -0.443504, 0.978632, 0.238223 )
+
+[node name="LaserButton" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.523355, -0.729833 )
+
+[node name="Door" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.706266, 0.734243, -2.12879 )
+
+[node name="MeshInstance" parent="." instance=ExtResource( 6 )]
+transform = Transform( -6.20503e-09, 0, 0.141955, 0, 1, 0, -1, 0, -4.37114e-08, 0.643065, 0.254555, -0.725758 )
+
+[node name="MeshInstance2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.608156, 0.744623, 0.872562, -0.113427 )
+
+[node name="MeshInstance3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, -1.35557e-08, -0.310118, 0, 1, -4.37114e-08, 0.746154, 0.56654, -0.725083 )
+
+[node name="MeshInstance4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.665946, -0.778721, 1.24624, -0.568573 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183725, 0.821685, -0.208565 )
+light_energy = 0.4
+omni_range = 1.3
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231377, -5.96046e-08, -0.378158 )
+extents = Vector3( 1.37527, 1.71139, 1.9722 )
+quality = 3
+use_color = false
+light_data = ExtResource( 8 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Laser1" parent="." instance=ExtResource( 5 )]
+transform = Transform( -8.30516e-09, 1, 0, -0.1, -8.30516e-08, 0, 0, 0, 0.1, -0.24793, 0.873961, 0.215185 )
+
+[node name="Laserbase" parent="Laser1" instance=ExtResource( 7 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="Laser1" instance=ExtResource( 7 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -8.30516e-09, 1, 0, -0.1, -8.30516e-08, 0, 0, 0, 0.1, -0.24793, 0.873961, 0.0859662 )
+
+[node name="Laserbase" parent="Laser2" instance=ExtResource( 7 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="Laser2" instance=ExtResource( 7 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser3" parent="." instance=ExtResource( 5 )]
+transform = Transform( -8.30516e-09, 1, 0, -0.1, -8.30516e-08, 0, 0, 0, 0.1, -0.24793, 0.873961, 0.342866 )
+
+[node name="Laserbase" parent="Laser3" instance=ExtResource( 7 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="Laser3" instance=ExtResource( 7 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser4" parent="." instance=ExtResource( 5 )]
+transform = Transform( -8.30516e-09, 1, 0, -0.1, -8.30516e-08, 0, 0, 0, 0.1, -0.24793, 0.873961, 0.472232 )
+
+[node name="Laserbase" parent="Laser4" instance=ExtResource( 7 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="Laser4" instance=ExtResource( 7 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[connection signal="button_disabled" from="DoorButton" to="." method="_on_DoorButton_button_disabled"]
+[connection signal="button_enabled" from="DoorButton" to="." method="_on_DoorButton_button_enabled"]
+[connection signal="button_disabled" from="LaserButton" to="." method="_on_LaserButton_button_disabled"]
+[connection signal="button_enabled" from="LaserButton" to="." method="_on_LaserButton_button_enabled"]
