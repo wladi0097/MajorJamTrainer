@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GridMap.exr-42ca29a8f3312cd577c50e098b77e5bc.stex"
+path="res://.import/GridMap3.exr-b3d22bd48ac3e16c1ef532800b6ee30f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/GridMap.exr"
-dest_files=[ "res://.import/GridMap.exr-42ca29a8f3312cd577c50e098b77e5bc.stex" ]
+source_file="res://textures/baking/GridMap3.exr"
+dest_files=[ "res://.import/GridMap3.exr-b3d22bd48ac3e16c1ef532800b6ee30f.stex" ]
 
 [params]
 

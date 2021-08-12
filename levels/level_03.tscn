@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://models/meshes.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://entities/Button.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://entities/Laser.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/Wire.tscn" type="PackedScene" id=6]
 [ext_resource path="res://models/Laserbase.tscn" type="PackedScene" id=7]
-[ext_resource path="res://levels/level_02.lmbake" type="BakedLightmapData" id=8]
 [ext_resource path="res://levels/level_03.gd" type="Script" id=9]
 [ext_resource path="res://textures/floor.jpg" type="Texture" id=10]
 [ext_resource path="res://textures/wall.jpg" type="Texture" id=11]
@@ -15,10 +14,10 @@
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 11 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 10 )
 
-[sub_resource type="ArrayMesh" id=5]
+[sub_resource type="ArrayMesh" id=3]
 lightmap_size_hint = Vector2( 46, 54 )
 surfaces/0 = {
 "aabb": AABB( -1.25, 0.25, -1.25, 2.00001, 1.00001, 2 ),
@@ -39,13 +38,13 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 97591,
 "index_count": 48,
-"material": SubResource( 4 ),
+"material": SubResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 32
 }
 
-[sub_resource type="Environment" id=6]
+[sub_resource type="Environment" id=4]
 
 [node name="Level_03" type="Spatial"]
 script = ExtResource( 9 )
@@ -54,7 +53,7 @@ script = ExtResource( 9 )
 mesh_library = ExtResource( 1 )
 use_in_baked_light = true
 cell_size = Vector3( 0.5, 0.5, 0.5 )
-baked_meshes = [ SubResource( 5 ) ]
+baked_meshes = [ SubResource( 3 ) ]
 data = {
 "cells": PoolIntArray( 0, 0, 786433, 65534, 0, 786433, 65537, 0, 458752, 131069, 0, 1048576, 131072, 0, 1245185, 196606, 0, 1245185, 131070, 1, 589824, 65536, 65533, 0, 0, 65534, 786433, 65534, 65534, 786433, 65537, 65534, 458752, 131069, 65534, 1048576, 131072, 65534, 1245185, 196606, 65534, 1245185 )
 }
@@ -89,20 +88,12 @@ transform = Transform( 1, 0, 0, 0, -1.35557e-08, -0.310118, 0, 1, -4.37114e-08, 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.665946, -0.778721, 1.24624, -0.568573 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.683326, 0.460211, -1.00111 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156193, 0.784587, -0.327769 )
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="BakedLightmap" type="BakedLightmap" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231377, 0.868301, -0.378158 )
-visible = false
-extents = Vector3( 1.37527, 0.574903, 1.9722 )
-quality = 3
-use_color = false
-light_data = ExtResource( 8 )
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 6 )
+environment = SubResource( 4 )
 
 [node name="Laser1" parent="." instance=ExtResource( 5 )]
 transform = Transform( -8.30516e-09, 1, 0, -0.1, -8.30516e-08, 0, 0, 0, 0.1, -0.24793, 0.873961, 0.215185 )

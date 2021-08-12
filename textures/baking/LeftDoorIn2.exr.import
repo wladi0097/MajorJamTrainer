@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Laser.exr-3651eafe0b931427278c5ef966be9f03.stex"
+path="res://.import/LeftDoorIn2.exr-68f93e0ee2c48d1da9900457bdd0cfc6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Laser.exr"
-dest_files=[ "res://.import/Laser.exr-3651eafe0b931427278c5ef966be9f03.stex" ]
+source_file="res://textures/baking/LeftDoorIn2.exr"
+dest_files=[ "res://.import/LeftDoorIn2.exr-68f93e0ee2c48d1da9900457bdd0cfc6.stex" ]
 
 [params]
 
