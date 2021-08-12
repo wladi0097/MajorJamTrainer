@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Major Jam Trainer"
-run/main_scene="res://levels/level_01.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]

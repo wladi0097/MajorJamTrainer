@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WallDoor.exr-8a556d700b24d55a6c3aeb79a9d439ae.stex"
+path="res://.import/GridMap2.exr-fe6fb5fad0fda9e15e08e822d4ccc125.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/WallDoor.exr"
-dest_files=[ "res://.import/WallDoor.exr-8a556d700b24d55a6c3aeb79a9d439ae.stex" ]
+source_file="res://textures/GridMap2.exr"
+dest_files=[ "res://.import/GridMap2.exr-fe6fb5fad0fda9e15e08e822d4ccc125.stex" ]
 
 [params]
 

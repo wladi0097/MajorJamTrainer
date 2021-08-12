@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LeftDoorOut.exr-e8d604249b8ffc920f1cb5bc3bd3847c.stex"
+path="res://.import/RightDoorOut.exr-5ab9b94a1ef7a09618d4b30f1dc3e325.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/LeftDoorOut.exr"
-dest_files=[ "res://.import/LeftDoorOut.exr-e8d604249b8ffc920f1cb5bc3bd3847c.stex" ]
+source_file="res://textures/RightDoorOut.exr"
+dest_files=[ "res://.import/RightDoorOut.exr-5ab9b94a1ef7a09618d4b30f1dc3e325.stex" ]
 
 [params]
 

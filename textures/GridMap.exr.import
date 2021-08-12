@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RightDoorOut.exr-76b084a9bf0be92292b2e2a2b9c6a184.stex"
+path="res://.import/GridMap.exr-42ca29a8f3312cd577c50e098b77e5bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/RightDoorOut.exr"
-dest_files=[ "res://.import/RightDoorOut.exr-76b084a9bf0be92292b2e2a2b9c6a184.stex" ]
+source_file="res://textures/GridMap.exr"
+dest_files=[ "res://.import/GridMap.exr-42ca29a8f3312cd577c50e098b77e5bc.stex" ]
 
 [params]
 
