@@ -14,6 +14,7 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33615, -0.0541876, 0.0140463 )
 visible = false
 light_color = Color( 0, 1, 0.0627451, 1 )
+light_bake_mode = 0
 omni_range = 0.6
 
 [node name="button" parent="." instance=ExtResource( 1 )]

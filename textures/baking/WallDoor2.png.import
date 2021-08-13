@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/WallDoor2.png-dbf09f9d7ad4187700cf2e73374989cb.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://textures/baking/WallDoor2.png"
+dest_files=[ "res://.import/WallDoor2.png-dbf09f9d7ad4187700cf2e73374989cb.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

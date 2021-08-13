@@ -156,6 +156,7 @@ mesh = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="cubes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543939, 1.09769, 0.850297 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -166,6 +167,7 @@ shape = SubResource( 4 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="cubes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1598, 0.458536, 0.252847 )
+use_in_baked_light = true
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -176,6 +178,7 @@ shape = SubResource( 6 )
 
 [node name="MeshInstance7" type="MeshInstance" parent="cubes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36489, 0.371316, 0.650549 )
+use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = null
 

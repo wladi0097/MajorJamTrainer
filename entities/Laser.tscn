@@ -22,6 +22,7 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.470196 )
 light_color = Color( 1, 0, 0, 1 )
 light_energy = 0.2
+light_bake_mode = 0
 omni_range = 1.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
