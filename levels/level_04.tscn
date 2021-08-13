@@ -10,28 +10,28 @@
 [ext_resource path="res://entities/Block.tscn" type="PackedScene" id=8]
 [ext_resource path="res://levels/level_04.gd" type="Script" id=9]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.168627, 0.168627, 0.168627, 1 )
 
-[sub_resource type="CapsuleMesh" id=4]
+[sub_resource type="CapsuleMesh" id=2]
 radius = 0.005
 mid_height = 2.0
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=3]
 material = ExtResource( 5 )
 size = Vector3( 0.4, 0.3, 0.2 )
 
-[sub_resource type="ConcavePolygonShape" id=6]
+[sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( -0.2, 0.15, 0.1, 0.2, 0.15, 0.1, -0.2, -0.15, 0.1, 0.2, 0.15, 0.1, 0.2, -0.15, 0.1, -0.2, -0.15, 0.1, 0.2, 0.15, -0.1, -0.2, 0.15, -0.1, 0.2, -0.15, -0.1, -0.2, 0.15, -0.1, -0.2, -0.15, -0.1, 0.2, -0.15, -0.1, 0.2, 0.15, 0.1, 0.2, 0.15, -0.1, 0.2, -0.15, 0.1, 0.2, 0.15, -0.1, 0.2, -0.15, -0.1, 0.2, -0.15, 0.1, -0.2, 0.15, -0.1, -0.2, 0.15, 0.1, -0.2, -0.15, -0.1, -0.2, 0.15, 0.1, -0.2, -0.15, 0.1, -0.2, -0.15, -0.1, 0.2, 0.15, 0.1, -0.2, 0.15, 0.1, 0.2, 0.15, -0.1, -0.2, 0.15, 0.1, -0.2, 0.15, -0.1, 0.2, 0.15, -0.1, -0.2, -0.15, 0.1, 0.2, -0.15, 0.1, -0.2, -0.15, -0.1, 0.2, -0.15, 0.1, 0.2, -0.15, -0.1, -0.2, -0.15, -0.1 )
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="CubeMesh" id=5]
 material = ExtResource( 5 )
 size = Vector3( 0.2, 0.4, 1 )
 
-[sub_resource type="ConcavePolygonShape" id=7]
+[sub_resource type="ConcavePolygonShape" id=6]
 data = PoolVector3Array( -0.1, 0.2, 0.5, 0.1, 0.2, 0.5, -0.1, -0.2, 0.5, 0.1, 0.2, 0.5, 0.1, -0.2, 0.5, -0.1, -0.2, 0.5, 0.1, 0.2, -0.5, -0.1, 0.2, -0.5, 0.1, -0.2, -0.5, -0.1, 0.2, -0.5, -0.1, -0.2, -0.5, 0.1, -0.2, -0.5, 0.1, 0.2, 0.5, 0.1, 0.2, -0.5, 0.1, -0.2, 0.5, 0.1, 0.2, -0.5, 0.1, -0.2, -0.5, 0.1, -0.2, 0.5, -0.1, 0.2, -0.5, -0.1, 0.2, 0.5, -0.1, -0.2, -0.5, -0.1, 0.2, 0.5, -0.1, -0.2, 0.5, -0.1, -0.2, -0.5, 0.1, 0.2, 0.5, -0.1, 0.2, 0.5, 0.1, 0.2, -0.5, -0.1, 0.2, 0.5, -0.1, 0.2, -0.5, 0.1, 0.2, -0.5, -0.1, -0.2, 0.5, 0.1, -0.2, 0.5, -0.1, -0.2, -0.5, 0.1, -0.2, 0.5, 0.1, -0.2, -0.5, -0.1, -0.2, -0.5 )
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=7]
 material = ExtResource( 5 )
 size = Vector3( 0.2, 0.2, 0.2 )
 
@@ -119,64 +119,64 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1598, 0.458536, 0.252847 )
 
 [node name="MeshInstance5" parent="cables" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 3.75064e-08, 0, 1, 0, 3.29602e-07, 0, 1.24749, 1.17644, 0.786315, 0.32876 )
-material_override = SubResource( 3 )
-mesh = SubResource( 4 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 
 [node name="MeshInstance3" parent="cables" instance=ExtResource( 6 )]
 transform = Transform( -6.20503e-09, 0, 0.141955, 0, 1, 0, -1, 0, -4.37114e-08, 1.319, 0.786315, -0.915094 )
-material_override = SubResource( 3 )
-mesh = SubResource( 4 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 
 [node name="MeshInstance4" parent="cables" instance=ExtResource( 6 )]
 transform = Transform( -1.59203e-08, 0, 0.364216, 0, 1, 0, -1, 0, -4.37114e-08, 0.801201, 0.786315, -0.0314128 )
-material_override = SubResource( 3 )
-mesh = SubResource( 4 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 
 [node name="MeshInstance8" parent="cables" instance=ExtResource( 6 )]
 transform = Transform( -1, 0, -5.96318e-08, 0, 1, 0, 4.2282e-08, 0, -0.258248, 1.90722, -0.203175, 0.231216 )
-material_override = SubResource( 3 )
-mesh = SubResource( 4 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 
 [node name="MeshInstance9" parent="cables" instance=ExtResource( 6 )]
 transform = Transform( -1, 0, -5.96318e-08, 6.66218e-08, -7.806e-08, -0.40691, -1.63071e-15, -1, 9.95999e-09, 1.90722, 0.0992892, 0.493357 )
-material_override = SubResource( 3 )
-mesh = SubResource( 4 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 
 [node name="MeshInstance7" parent="cables" instance=ExtResource( 6 )]
 transform = Transform( -5.38233e-08, 0, 1.23134, 0, 1, 0, -1, 0, -4.37114e-08, 0.674445, -0.203283, -0.0314128 )
-material_override = SubResource( 3 )
-mesh = SubResource( 4 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 
 [node name="MeshInstance6" parent="cables" instance=ExtResource( 6 )]
 transform = Transform( 2.7123e-16, 1, -6.20505e-09, 1.13053e-08, -7.96404e-08, -0.258636, -1.36118, 0, -5.94991e-08, 1.17667, 0.524413, 1.48936 )
-material_override = SubResource( 3 )
-mesh = SubResource( 4 )
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
 
 [node name="cubes" type="Spatial" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="cubes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543939, 1.09769, 0.850297 )
-mesh = SubResource( 1 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance"]
 
 [node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="cubes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1598, 0.458536, 0.252847 )
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance2/StaticBody"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="MeshInstance7" type="MeshInstance" parent="cubes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36489, 0.371316, 0.650549 )
-mesh = SubResource( 5 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance7"]

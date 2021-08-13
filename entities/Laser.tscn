@@ -27,6 +27,6 @@ omni_range = 1.0
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208186, 0.235868, -0.427964 )
 stream = ExtResource( 3 )
-unit_db = -13.0
+unit_db = -11.0
 unit_size = 0.2
 autoplay = true
