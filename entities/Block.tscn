@@ -51,8 +51,9 @@ uv1_triplanar = true
 material = SubResource( 9 )
 size = Vector3( 0.2, 0.2, 0.2 )
 
-[sub_resource type="SphereShape" id=11]
-radius = 0.123829
+[sub_resource type="CylinderShape" id=14]
+radius = 0.12
+height = 0.22
 
 [sub_resource type="BoxShape" id=12]
 extents = Vector3( 0.109739, 0.112274, 0.11229 )
@@ -125,7 +126,7 @@ mesh = SubResource( 10 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 11 )
+shape = SubResource( 14 )
 
 [node name="DeathTrigger" type="Area" parent="."]
 collision_layer = 0
