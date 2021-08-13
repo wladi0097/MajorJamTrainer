@@ -4,3 +4,4 @@ export.cfg
 .mono/
 data_*/
 dist/
+*.vs
