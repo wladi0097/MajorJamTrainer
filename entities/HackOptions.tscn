@@ -1,9 +1,39 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://textures/main_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://entities/HackOptions.gd" type="Script" id=2]
 [ext_resource path="res://textures/arrow-up-box.png" type="Texture" id=3]
 [ext_resource path="res://textures/arrow-down-box.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color( 0.207843, 0.207843, 0.207843, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0666667, 0, 0.87451, 1 )
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 3.0
@@ -19,13 +49,29 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 5.0
+content_margin_right = 5.0
 draw_center = false
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[node name="HackOptions" type="VBoxContainer"]
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+
+[node name="HackOptions" type="TabContainer"]
 anchor_left = 0.031
 anchor_top = 0.184
 anchor_right = 0.031
@@ -34,50 +80,73 @@ margin_left = 1.16091
 margin_top = -0.0595398
 margin_right = 436.161
 margin_bottom = 440.94
+custom_styles/tab_fg = SubResource( 3 )
+custom_styles/tab_bg = SubResource( 4 )
+custom_styles/panel = SubResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+tab_align = 0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_right = 435.0
+[node name="Settings" type="Tabs" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 35.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+margin_top = 16.0
+margin_right = 430.0
+margin_bottom = 401.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer"]
+margin_right = 430.0
 margin_bottom = 25.0
 custom_fonts/font = ExtResource( 1 )
 text = "-- Global settings --"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="showWireFrame" type="CheckBox" parent="."]
+[node name="showWireFrame" type="CheckBox" parent="Settings/VBoxContainer"]
 margin_top = 29.0
-margin_right = 435.0
+margin_right = 430.0
 margin_bottom = 62.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 1 )
 enabled_focus_mode = 0
 text = "Show entity ids"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="Settings/VBoxContainer"]
 margin_top = 66.0
-margin_right = 435.0
+margin_right = 430.0
 margin_bottom = 91.0
 custom_fonts/font = ExtResource( 1 )
 text = "-- Entity settings --"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/VBoxContainer"]
 margin_top = 95.0
-margin_right = 435.0
+margin_right = 430.0
 margin_bottom = 124.0
 
-[node name="entityIdInput" type="LineEdit" parent="HBoxContainer"]
-margin_right = 370.0
+[node name="entityIdInput" type="LineEdit" parent="Settings/VBoxContainer/HBoxContainer"]
+margin_right = 362.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = ExtResource( 1 )
 max_length = 3
-placeholder_text = "ENTER ID"
+placeholder_text = "Enter ID e.g. \"420\""
+caret_blink = true
+caret_blink_speed = 0.5
 
-[node name="fetchEntityId" type="Button" parent="HBoxContainer"]
-margin_left = 374.0
-margin_right = 435.0
+[node name="fetchEntityId" type="Button" parent="Settings/VBoxContainer/HBoxContainer"]
+margin_left = 366.0
+margin_right = 430.0
 margin_bottom = 29.0
 focus_mode = 0
 custom_styles/normal = SubResource( 2 )
@@ -85,24 +154,22 @@ custom_fonts/font = ExtResource( 1 )
 enabled_focus_mode = 0
 text = "Load"
 
-[node name="unkownEntity" type="Label" parent="."]
-visible = false
+[node name="unkownEntity" type="Label" parent="Settings/VBoxContainer"]
 margin_top = 128.0
-margin_right = 435.0
+margin_right = 430.0
 margin_bottom = 153.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 0.211765, 0.211765, 1 )
 text = "?? Unkown entity id ??"
 align = 1
 
-[node name="editEntity" type="VBoxContainer" parent="."]
-visible = false
-margin_top = 128.0
-margin_right = 435.0
-margin_bottom = 248.0
+[node name="editEntity" type="VBoxContainer" parent="Settings/VBoxContainer"]
+margin_top = 157.0
+margin_right = 430.0
+margin_bottom = 306.0
 
-[node name="editEntityText" type="Label" parent="editEntity"]
-margin_right = 435.0
+[node name="editEntityText" type="Label" parent="Settings/VBoxContainer/editEntity"]
+margin_right = 430.0
 margin_bottom = 25.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.345098, 0.952941, 0.27451, 1 )
@@ -110,48 +177,81 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="invertGravity" type="CheckBox" parent="editEntity"]
+[node name="resetPosition" type="Button" parent="Settings/VBoxContainer/editEntity"]
 margin_top = 29.0
-margin_right = 435.0
-margin_bottom = 62.0
+margin_right = 187.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 2
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Reset position"
+align = 0
+
+[node name="invertGravity" type="CheckBox" parent="Settings/VBoxContainer/editEntity"]
+margin_top = 64.0
+margin_right = 430.0
+margin_bottom = 97.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 1 )
 enabled_focus_mode = 0
 text = "Invert Gravity"
 
-[node name="SizeContainer" type="HBoxContainer" parent="editEntity"]
-margin_top = 66.0
-margin_right = 435.0
-margin_bottom = 120.0
+[node name="SizeContainer" type="HBoxContainer" parent="Settings/VBoxContainer/editEntity"]
+margin_top = 101.0
+margin_right = 430.0
+margin_bottom = 149.0
 
-[node name="Label2" type="Label" parent="editEntity/SizeContainer"]
-margin_top = 14.0
-margin_right = 47.0
-margin_bottom = 39.0
-custom_fonts/font = ExtResource( 1 )
-text = "Size"
-
-[node name="SizeUpButton" type="Button" parent="editEntity/SizeContainer"]
-margin_left = 51.0
-margin_right = 111.0
-margin_bottom = 54.0
+[node name="SizeUpButton" type="Button" parent="Settings/VBoxContainer/editEntity/SizeContainer"]
+margin_right = 48.0
+margin_bottom = 48.0
 focus_mode = 0
+custom_styles/normal = SubResource( 7 )
 enabled_focus_mode = 0
 icon = ExtResource( 3 )
 flat = true
 
-[node name="SizeDownButton" type="Button" parent="editEntity/SizeContainer"]
-margin_left = 115.0
-margin_right = 175.0
-margin_bottom = 54.0
+[node name="SizeDownButton" type="Button" parent="Settings/VBoxContainer/editEntity/SizeContainer"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
 focus_mode = 0
+custom_styles/normal = SubResource( 8 )
 enabled_focus_mode = 0
 icon = ExtResource( 4 )
 flat = true
 
-[connection signal="toggled" from="showWireFrame" to="." method="_on_showWireFrame_toggled"]
-[connection signal="text_entered" from="HBoxContainer/entityIdInput" to="." method="_on_entityIdInput_text_entered"]
-[connection signal="button_up" from="HBoxContainer/fetchEntityId" to="." method="_on_fetchEntityId_button_up"]
-[connection signal="toggled" from="editEntity/invertGravity" to="." method="_on_invertGravity_toggled"]
-[connection signal="button_down" from="editEntity/SizeContainer/SizeUpButton" to="." method="_on_SizeUpButton_button_down"]
-[connection signal="button_down" from="editEntity/SizeContainer/SizeDownButton" to="." method="_on_SizeDownButton_button_down"]
+[node name="Label2" type="Label" parent="Settings/VBoxContainer/editEntity/SizeContainer"]
+margin_left = 104.0
+margin_top = 11.0
+margin_right = 151.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 1 )
+text = "Size"
+
+[node name="Logs" type="Tabs" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -391.0
+margin_bottom = -385.0
+
+[node name="log" type="RichTextLabel" parent="Logs"]
+margin_top = 11.0
+margin_right = 425.0
+margin_bottom = 405.0
+custom_fonts/normal_font = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="Settings/VBoxContainer/showWireFrame" to="." method="_on_showWireFrame_toggled"]
+[connection signal="text_entered" from="Settings/VBoxContainer/HBoxContainer/entityIdInput" to="." method="_on_entityIdInput_text_entered"]
+[connection signal="button_up" from="Settings/VBoxContainer/HBoxContainer/fetchEntityId" to="." method="_on_fetchEntityId_button_up"]
+[connection signal="button_up" from="Settings/VBoxContainer/editEntity/resetPosition" to="." method="_on_resetPosition_button_up"]
+[connection signal="toggled" from="Settings/VBoxContainer/editEntity/invertGravity" to="." method="_on_invertGravity_toggled"]
+[connection signal="button_down" from="Settings/VBoxContainer/editEntity/SizeContainer/SizeUpButton" to="." method="_on_SizeUpButton_button_down"]
+[connection signal="button_down" from="Settings/VBoxContainer/editEntity/SizeContainer/SizeDownButton" to="." method="_on_SizeDownButton_button_down"]

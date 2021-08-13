@@ -59,6 +59,10 @@ __meta__ = {
 }
 
 [node name="HackOptions" parent="LeftBar/CanvasLayer" instance=ExtResource( 4 )]
+margin_left = -7.68
+margin_top = -17.48
+margin_right = 436.32
+margin_bottom = 465.52
 
 [node name="MaximizeButton" type="Button" parent="LeftBar"]
 margin_left = 14.0
