@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://textures/hack_ui.jpg" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://entities/HackOptions.tscn" type="PackedScene" id=4]
 [ext_resource path="res://textures/backdoor.png" type="Texture" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://textures/main_font.tres" type="DynamicFont" id=7]
 
 [node name="HContainer" type="HBoxContainer"]
 anchor_right = 1.0
@@ -27,11 +28,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="LeftBar"]
-offset = Vector2( -500, 0 )
-transform = Transform2D( 1, 0, 0, 1, -500, 0 )
+[node name="Credits" type="CanvasLayer" parent="LeftBar"]
+offset = Vector2( -1000, 0 )
+transform = Transform2D( 1, 0, 0, 1, -1000, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="LeftBar/CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="LeftBar/Credits"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -46,7 +47,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MinizeButton" type="Button" parent="LeftBar/CanvasLayer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="LeftBar/Credits"]
+margin_left = 24.0
+margin_top = 118.665
+margin_right = 483.0
+margin_bottom = 598.665
+custom_fonts/normal_font = ExtResource( 7 )
+text = "Made by:
+* Wladi0097 (TheRealWlad)
+* Justin-SG
+
+Made with:
+* Godot
+* Blender
+
+Assets:
+* Selfmade
+* ambientCG.com
+* freesound.org (janbezouska, InspectorJ, Loyalty_Freak_Music)
+
+
+Thanks for playing :)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HackUi" type="CanvasLayer" parent="LeftBar"]
+offset = Vector2( -500, 0 )
+transform = Transform2D( 1, 0, 0, 1, -500, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="LeftBar/HackUi"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -623.63
+margin_top = -272.591
+margin_right = -146.63
+margin_bottom = 252.409
+mouse_filter = 2
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinizeButton" type="Button" parent="LeftBar/HackUi"]
 margin_left = 394.53
 margin_top = 88.0595
 margin_right = 491.53
@@ -58,7 +103,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HackOptions" parent="LeftBar/CanvasLayer" instance=ExtResource( 4 )]
+[node name="HackOptions" parent="LeftBar/HackUi" instance=ExtResource( 4 )]
 margin_left = -7.68
 margin_top = -17.48
 margin_right = 436.32
@@ -90,22 +135,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="LeftBar"]
-margin_left = 22.0
-margin_top = 125.47
-margin_right = 98.0
-margin_bottom = 195.47
+[node name="CreditsButton" type="Button" parent="LeftBar"]
+margin_left = 22.5321
+margin_top = 121.997
+margin_right = 99.5321
+margin_bottom = 218.997
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 6 )
 flat = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="LeftBar/Button"]
-margin_left = -4.5351
-margin_top = 78.5349
-margin_right = 81.4649
-margin_bottom = 109.535
+[node name="CreditsLabel" type="Label" parent="LeftBar"]
+margin_left = 18.2514
+margin_top = 206.793
+margin_right = 104.251
+margin_bottom = 237.793
 text = "Credits.thx"
 align = 1
 __meta__ = {
@@ -139,5 +187,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )
 
-[connection signal="button_down" from="LeftBar/CanvasLayer/MinizeButton" to="." method="_on_MinizeButton_button_down"]
+[connection signal="button_down" from="LeftBar/HackUi/MinizeButton" to="." method="_on_MinizeButton_button_down"]
 [connection signal="button_down" from="LeftBar/MaximizeButton" to="." method="_on_MaximizeButton_button_down"]
+[connection signal="button_up" from="LeftBar/CreditsButton" to="." method="_on_CreditsButton_button_up"]
