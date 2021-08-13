@@ -15,7 +15,6 @@ func _ready():
 func invertGravity():
 	self.gravity_scale = -1
 	self.apply_impulse(Vector3(), Vector3(0,0,0.001))
-	sizeCheckArea.coll
 	
 func normalGravity():
 	self.gravity_scale = 1
