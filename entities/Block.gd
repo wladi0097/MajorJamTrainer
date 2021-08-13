@@ -8,6 +8,7 @@ onready var blockLabel = $WireFrame/Viewport/Control/Panel/Label
 
 func _ready():
 	self.wireFrame = $WireFrame
+	self.sizeCheckArea = $SizeCheckArea
 	blockLabel.text = self.id
 	self.initialPosition = self.global_transform
 	

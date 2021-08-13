@@ -50,3 +50,27 @@ func _on_invertGravity_toggled(button_pressed):
 
 func _on_entityIdInput_text_entered(new_text):
 	self._on_fetchEntityId_button_up()
+
+
+func _on_SizeUpButton_button_down():
+	if currentEntity.sizeCheckArea == null:
+		return
+	var overlappingBodies = currentEntity.sizeCheckArea.get_overlapping_bodies()
+	print(overlappingBodies)
+	if !overlappingBodies.empty():
+		return
+	if currentEntity.currentSize >= 3:
+		return
+	currentEntity.scale *= 2
+	currentEntity.currentSize += 1
+	currentEntity.add_force(Vector3(0,0,0.1), Vector3(0,0,1))
+
+
+func _on_SizeDownButton_button_down():
+	if currentEntity.sizeCheckArea == null:
+		return
+	if currentEntity.currentSize <= 0:
+		return
+	currentEntity.scale /= 2
+	currentEntity.currentSize -= 1
+	currentEntity.add_force(Vector3(0,0,0.1), Vector3(0,0,1))
