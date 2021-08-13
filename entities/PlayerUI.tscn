@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://textures/hack_ui.jpg" type="Texture" id=2]
 [ext_resource path="res://entities/PlayerUI.gd" type="Script" id=3]
 [ext_resource path="res://entities/HackOptions.tscn" type="PackedScene" id=4]
 [ext_resource path="res://textures/backdoor.png" type="Texture" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
 
 [node name="HContainer" type="HBoxContainer"]
 anchor_right = 1.0
@@ -68,6 +69,40 @@ focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 5 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LeftBar/MaximizeButton"]
+margin_left = -5.37842
+margin_top = 56.4588
+margin_right = 80.6216
+margin_bottom = 87.4588
+text = "NotCheat.exe
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="LeftBar"]
+margin_left = 22.0
+margin_top = 125.47
+margin_right = 98.0
+margin_bottom = 195.47
+icon = ExtResource( 6 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LeftBar/Button"]
+margin_left = -4.5351
+margin_top = 78.5349
+margin_right = 81.4649
+margin_bottom = 109.535
+text = "Credits.thx"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
