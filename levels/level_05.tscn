@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://models/meshes.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://entities/Block.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entities/PlayerUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/Laser.tscn" type="PackedScene" id=4]
 [ext_resource path="res://models/Wall.material" type="Material" id=5]
 [ext_resource path="res://models/Laserbase.tscn" type="PackedScene" id=6]
@@ -140,8 +139,6 @@ material/0 = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance7/StaticBody"]
 shape = SubResource( 9 )
-
-[node name="HContainer" parent="." instance=ExtResource( 3 )]
 
 [node name="laser" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22375, 0.548776, 0.236953 )
