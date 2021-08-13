@@ -1,0 +1,206 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://models/Laserbase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/Laser.tscn" type="PackedScene" id=3]
+[ext_resource path="res://models/meshes.meshlib" type="MeshLibrary" id=4]
+[ext_resource path="res://models/Wall.material" type="Material" id=5]
+[ext_resource path="res://entities/Wire.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/Block.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/level_04.gd" type="Script" id=9]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+
+[sub_resource type="CapsuleMesh" id=4]
+radius = 0.005
+mid_height = 2.0
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 5 )
+size = Vector3( 0.4, 0.3, 0.2 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -0.2, 0.15, 0.1, 0.2, 0.15, 0.1, -0.2, -0.15, 0.1, 0.2, 0.15, 0.1, 0.2, -0.15, 0.1, -0.2, -0.15, 0.1, 0.2, 0.15, -0.1, -0.2, 0.15, -0.1, 0.2, -0.15, -0.1, -0.2, 0.15, -0.1, -0.2, -0.15, -0.1, 0.2, -0.15, -0.1, 0.2, 0.15, 0.1, 0.2, 0.15, -0.1, 0.2, -0.15, 0.1, 0.2, 0.15, -0.1, 0.2, -0.15, -0.1, 0.2, -0.15, 0.1, -0.2, 0.15, -0.1, -0.2, 0.15, 0.1, -0.2, -0.15, -0.1, -0.2, 0.15, 0.1, -0.2, -0.15, 0.1, -0.2, -0.15, -0.1, 0.2, 0.15, 0.1, -0.2, 0.15, 0.1, 0.2, 0.15, -0.1, -0.2, 0.15, 0.1, -0.2, 0.15, -0.1, 0.2, 0.15, -0.1, -0.2, -0.15, 0.1, 0.2, -0.15, 0.1, -0.2, -0.15, -0.1, 0.2, -0.15, 0.1, 0.2, -0.15, -0.1, -0.2, -0.15, -0.1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = ExtResource( 5 )
+size = Vector3( 0.2, 0.4, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( -0.1, 0.2, 0.5, 0.1, 0.2, 0.5, -0.1, -0.2, 0.5, 0.1, 0.2, 0.5, 0.1, -0.2, 0.5, -0.1, -0.2, 0.5, 0.1, 0.2, -0.5, -0.1, 0.2, -0.5, 0.1, -0.2, -0.5, -0.1, 0.2, -0.5, -0.1, -0.2, -0.5, 0.1, -0.2, -0.5, 0.1, 0.2, 0.5, 0.1, 0.2, -0.5, 0.1, -0.2, 0.5, 0.1, 0.2, -0.5, 0.1, -0.2, -0.5, 0.1, -0.2, 0.5, -0.1, 0.2, -0.5, -0.1, 0.2, 0.5, -0.1, -0.2, -0.5, -0.1, 0.2, 0.5, -0.1, -0.2, 0.5, -0.1, -0.2, -0.5, 0.1, 0.2, 0.5, -0.1, 0.2, 0.5, 0.1, 0.2, -0.5, -0.1, 0.2, 0.5, -0.1, 0.2, -0.5, 0.1, 0.2, -0.5, -0.1, -0.2, 0.5, 0.1, -0.2, 0.5, -0.1, -0.2, -0.5, 0.1, -0.2, 0.5, 0.1, -0.2, -0.5, -0.1, -0.2, -0.5 )
+
+[sub_resource type="CubeMesh" id=5]
+material = ExtResource( 5 )
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -0.1, 0.1, 0.1, 0.1, 0.1, 0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, 0.1, -0.1, 0.1, -0.1, -0.1, 0.1, 0.1, 0.1, -0.1, -0.1, 0.1, -0.1, 0.1, -0.1, -0.1, -0.1, 0.1, -0.1, -0.1, -0.1, -0.1, 0.1, -0.1, -0.1, 0.1, 0.1, 0.1, 0.1, 0.1, -0.1, 0.1, -0.1, 0.1, 0.1, 0.1, -0.1, 0.1, -0.1, -0.1, 0.1, -0.1, 0.1, -0.1, 0.1, -0.1, -0.1, 0.1, 0.1, -0.1, -0.1, -0.1, -0.1, 0.1, 0.1, -0.1, -0.1, 0.1, -0.1, -0.1, -0.1, 0.1, 0.1, 0.1, -0.1, 0.1, 0.1, 0.1, 0.1, -0.1, -0.1, 0.1, 0.1, -0.1, 0.1, -0.1, 0.1, 0.1, -0.1, -0.1, -0.1, 0.1, 0.1, -0.1, 0.1, -0.1, -0.1, -0.1, 0.1, -0.1, 0.1, 0.1, -0.1, -0.1, -0.1, -0.1, -0.1 )
+
+[node name="level_04" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0877385, -0.00573045, -0.229193 )
+script = ExtResource( 9 )
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 4 )
+use_in_baked_light = true
+cell_size = Vector3( 0.5, 0.5, 0.5 )
+data = {
+"cells": PoolIntArray( 0, 0, 786433, 65532, 0, 1114113, 65534, 0, 786433, 65537, 0, 458752, 131067, 0, 327680, 131072, 0, 1245185, 196604, 0, 262145, 196606, 0, 1245185, 131068, 1, 524288, 0, 2, 1114113, 65534, 2, 1114113, 65537, 2, 458752, 131069, 2, 1048576, 131072, 2, 262145, 196606, 2, 262145, 131070, 3, 524288, 65536, 65533, 0, 0, 65534, 786433, 65534, 65534, 786433, 65537, 65534, 458752, 131069, 65534, 1048576, 131072, 65534, 1245185, 196606, 65534, 1245185, 131068, 65535, 131072 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 2, 0 )
+}
+
+[node name="boxes" type="Spatial" parent="."]
+
+[node name="Block" parent="boxes" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259174, 0.53333, 1.20066 )
+id = "111"
+
+[node name="Block2" parent="boxes" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775452, 0.602292, -0.574688 )
+id = "865"
+
+[node name="buttons" type="Spatial" parent="."]
+
+[node name="laserButton" parent="buttons" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22375, 0.548776, 0.236953 )
+
+[node name="DoorButton1" parent="buttons" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -1.24794, 0.981863, 0.29133 )
+
+[node name="DoorButton2" parent="buttons" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.152789, 0.981863, -0.715565 )
+
+[node name="laser" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22375, 0.548776, 0.236953 )
+
+[node name="Laser1" parent="laser" instance=ExtResource( 3 )]
+transform = Transform( 3.6303e-16, -4.37114e-08, -0.1, -0.1, -8.30516e-08, 0, -8.30516e-09, 1, -4.37114e-09, 2.83723, 0.414835, -0.481146 )
+
+[node name="Laserbase" parent="laser/Laser1" instance=ExtResource( 1 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser1" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser2" parent="laser" instance=ExtResource( 3 )]
+transform = Transform( 3.6303e-16, -4.37114e-08, -0.1, -0.1, -8.30516e-08, 0, -8.30516e-09, 1, -4.37114e-09, 2.96645, 0.414835, -0.481146 )
+
+[node name="Laserbase" parent="laser/Laser2" instance=ExtResource( 1 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser2" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser3" parent="laser" instance=ExtResource( 3 )]
+transform = Transform( 3.6303e-16, -4.37114e-08, -0.1, -0.1, -8.30516e-08, 0, -8.30516e-09, 1, -4.37114e-09, 2.70955, 0.414835, -0.481146 )
+
+[node name="Laserbase" parent="laser/Laser3" instance=ExtResource( 1 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser3" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser4" parent="laser" instance=ExtResource( 3 )]
+transform = Transform( 3.6303e-16, -4.37114e-08, -0.1, -0.1, -8.30516e-08, 0, -8.30516e-09, 1, -4.37114e-09, 2.58018, 0.414835, -0.481146 )
+
+[node name="Laserbase" parent="laser/Laser4" instance=ExtResource( 1 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser4" instance=ExtResource( 1 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="cables" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1598, 0.458536, 0.252847 )
+
+[node name="MeshInstance5" parent="cables" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 3.75064e-08, 0, 1, 0, 3.29602e-07, 0, 1.24749, 1.17644, 0.786315, 0.32876 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance3" parent="cables" instance=ExtResource( 6 )]
+transform = Transform( -6.20503e-09, 0, 0.141955, 0, 1, 0, -1, 0, -4.37114e-08, 1.319, 0.786315, -0.915094 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance4" parent="cables" instance=ExtResource( 6 )]
+transform = Transform( -1.59203e-08, 0, 0.364216, 0, 1, 0, -1, 0, -4.37114e-08, 0.801201, 0.786315, -0.0314128 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance8" parent="cables" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -5.96318e-08, 0, 1, 0, 4.2282e-08, 0, -0.258248, 1.90722, -0.203175, 0.231216 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance9" parent="cables" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -5.96318e-08, 6.66218e-08, -7.806e-08, -0.40691, -1.63071e-15, -1, 9.95999e-09, 1.90722, 0.0992892, 0.493357 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance7" parent="cables" instance=ExtResource( 6 )]
+transform = Transform( -5.38233e-08, 0, 1.23134, 0, 1, 0, -1, 0, -4.37114e-08, 0.674445, -0.203283, -0.0314128 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance6" parent="cables" instance=ExtResource( 6 )]
+transform = Transform( 2.7123e-16, 1, -6.20505e-09, 1.13053e-08, -7.96404e-08, -0.258636, -1.36118, 0, -5.94991e-08, 1.17667, 0.524413, 1.48936 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+
+[node name="cubes" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="cubes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543939, 1.09769, 0.850297 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="cubes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1598, 0.458536, 0.252847 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance2/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="cubes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36489, 0.371316, 0.650549 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance7/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="Door" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.232817, 0.731395, 1.70237 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.241283, -0.188728, 0.951927, 0.124557, 0.978817, 0.162488, -0.962428, 0.0793638, 0.25968, -0.0695808, 0.822697, 0.67847 )
+light_energy = 0.3
+spot_range = 2.0
+spot_angle = 20.0
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.311326, 0.774807, 0.375653 )
+light_energy = 0.4
+omni_range = 3.0
+
+[connection signal="button_disabled" from="buttons/laserButton" to="." method="_on_laserButton_button_disabled"]
+[connection signal="button_enabled" from="buttons/laserButton" to="." method="_on_laserButton_button_enabled"]
+[connection signal="button_disabled" from="buttons/DoorButton1" to="." method="_on_DoorButton1_button_disabled"]
+[connection signal="button_enabled" from="buttons/DoorButton1" to="." method="_on_DoorButton1_button_enabled"]
+[connection signal="button_disabled" from="buttons/DoorButton2" to="." method="_on_DoorButton2_button_disabled"]
+[connection signal="button_enabled" from="buttons/DoorButton2" to="." method="_on_DoorButton2_button_enabled"]

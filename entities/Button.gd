@@ -5,6 +5,7 @@ var isPressed := false
 onready var buttonPressCollision : Area = $buttonPressCollision
 onready var buttonSurface : MeshInstance = $button/Cube001
 onready var buttonLight : OmniLight = $light
+onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 onready var materialButtonDisabled : Material = preload('res://models/button_red.material')
 onready var materialButtonEnabled : Material = preload('res://models/button_red_active.material')
@@ -14,6 +15,7 @@ signal button_disabled
 
 func _on_buttonPressCollision_body_entered(body):
 	if self.buttonPressCollision.get_overlapping_bodies().size() == 1:
+		audio.play()
 		emit_signal("button_enabled")
 		self.buttonLight.visible = true
 		self.isPressed = true

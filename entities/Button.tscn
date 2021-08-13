@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://models/button.glb" type="PackedScene" id=1]
 [ext_resource path="res://entities/Button.gd" type="Script" id=2]
+[ext_resource path="res://audio/ok.wav" type="AudioStream" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.173987, 0.0639894, 0.169377 )
@@ -25,6 +26,11 @@ collision_mask = 2
 [node name="CollisionShape" type="CollisionShape" parent="buttonPressCollision"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346866, -0.212535, 0 )
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.345486, -0.078783, 0 )
+stream = ExtResource( 3 )
+unit_db = 2.0
 
 [connection signal="body_entered" from="buttonPressCollision" to="." method="_on_buttonPressCollision_body_entered"]
 [connection signal="body_exited" from="buttonPressCollision" to="." method="_on_buttonPressCollision_body_exited"]

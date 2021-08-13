@@ -5,7 +5,7 @@ onready var camera = $Pivot/Camera
 var gravity = -5
 var max_speed = 1
 var mouse_sensitivity = 0.004
-var jump_speed = 2
+var jump_speed = 1.5
 
 var jump = false
 var velocity = Vector3()
