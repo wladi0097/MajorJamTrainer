@@ -14,16 +14,16 @@
 material = ExtResource( 5 )
 size = Vector3( 0.2, 0.6, 0.2 )
 
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -0.1, 0.3, 0.1, 0.1, 0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.3, 0.1, 0.1, -0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.3, -0.1, -0.1, 0.3, -0.1, 0.1, -0.3, -0.1, -0.1, 0.3, -0.1, -0.1, -0.3, -0.1, 0.1, -0.3, -0.1, 0.1, 0.3, 0.1, 0.1, 0.3, -0.1, 0.1, -0.3, 0.1, 0.1, 0.3, -0.1, 0.1, -0.3, -0.1, 0.1, -0.3, 0.1, -0.1, 0.3, -0.1, -0.1, 0.3, 0.1, -0.1, -0.3, -0.1, -0.1, 0.3, 0.1, -0.1, -0.3, 0.1, -0.1, -0.3, -0.1, 0.1, 0.3, 0.1, -0.1, 0.3, 0.1, 0.1, 0.3, -0.1, -0.1, 0.3, 0.1, -0.1, 0.3, -0.1, 0.1, 0.3, -0.1, -0.1, -0.3, 0.1, 0.1, -0.3, 0.1, -0.1, -0.3, -0.1, 0.1, -0.3, 0.1, 0.1, -0.3, -0.1, -0.1, -0.3, -0.1 )
+
 [sub_resource type="ConcavePolygonShape" id=3]
 data = PoolVector3Array( -0.1, 0.3, 0.1, 0.1, 0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.3, 0.1, 0.1, -0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.3, -0.1, -0.1, 0.3, -0.1, 0.1, -0.3, -0.1, -0.1, 0.3, -0.1, -0.1, -0.3, -0.1, 0.1, -0.3, -0.1, 0.1, 0.3, 0.1, 0.1, 0.3, -0.1, 0.1, -0.3, 0.1, 0.1, 0.3, -0.1, 0.1, -0.3, -0.1, 0.1, -0.3, 0.1, -0.1, 0.3, -0.1, -0.1, 0.3, 0.1, -0.1, -0.3, -0.1, -0.1, 0.3, 0.1, -0.1, -0.3, 0.1, -0.1, -0.3, -0.1, 0.1, 0.3, 0.1, -0.1, 0.3, 0.1, 0.1, 0.3, -0.1, -0.1, 0.3, 0.1, -0.1, 0.3, -0.1, 0.1, 0.3, -0.1, -0.1, -0.3, 0.1, 0.1, -0.3, 0.1, -0.1, -0.3, -0.1, 0.1, -0.3, 0.1, 0.1, -0.3, -0.1, -0.1, -0.3, -0.1 )
 
 [sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( -0.1, 0.3, 0.1, 0.1, 0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.3, 0.1, 0.1, -0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.3, -0.1, -0.1, 0.3, -0.1, 0.1, -0.3, -0.1, -0.1, 0.3, -0.1, -0.1, -0.3, -0.1, 0.1, -0.3, -0.1, 0.1, 0.3, 0.1, 0.1, 0.3, -0.1, 0.1, -0.3, 0.1, 0.1, 0.3, -0.1, 0.1, -0.3, -0.1, 0.1, -0.3, 0.1, -0.1, 0.3, -0.1, -0.1, 0.3, 0.1, -0.1, -0.3, -0.1, -0.1, 0.3, 0.1, -0.1, -0.3, 0.1, -0.1, -0.3, -0.1, 0.1, 0.3, 0.1, -0.1, 0.3, 0.1, 0.1, 0.3, -0.1, -0.1, 0.3, 0.1, -0.1, 0.3, -0.1, 0.1, 0.3, -0.1, -0.1, -0.3, 0.1, 0.1, -0.3, 0.1, -0.1, -0.3, -0.1, 0.1, -0.3, 0.1, 0.1, -0.3, -0.1, -0.1, -0.3, -0.1 )
 
-[sub_resource type="ConcavePolygonShape" id=5]
-data = PoolVector3Array( -0.1, 0.3, 0.1, 0.1, 0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.3, 0.1, 0.1, -0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.3, -0.1, -0.1, 0.3, -0.1, 0.1, -0.3, -0.1, -0.1, 0.3, -0.1, -0.1, -0.3, -0.1, 0.1, -0.3, -0.1, 0.1, 0.3, 0.1, 0.1, 0.3, -0.1, 0.1, -0.3, 0.1, 0.1, 0.3, -0.1, 0.1, -0.3, -0.1, 0.1, -0.3, 0.1, -0.1, 0.3, -0.1, -0.1, 0.3, 0.1, -0.1, -0.3, -0.1, -0.1, 0.3, 0.1, -0.1, -0.3, 0.1, -0.1, -0.3, -0.1, 0.1, 0.3, 0.1, -0.1, 0.3, 0.1, 0.1, 0.3, -0.1, -0.1, 0.3, 0.1, -0.1, 0.3, -0.1, 0.1, 0.3, -0.1, -0.1, -0.3, 0.1, 0.1, -0.3, 0.1, -0.1, -0.3, -0.1, 0.1, -0.3, 0.1, 0.1, -0.3, -0.1, -0.1, -0.3, -0.1 )
-
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="CubeMesh" id=5]
 material = ExtResource( 5 )
 size = Vector3( 0.5, 1, 1 )
 
@@ -78,7 +78,7 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance"]
 
 [node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance/StaticBody"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="cubes"]
 transform = Transform( 1, 0, 0, 0, -6.55671e-08, 2, 0, -1.5, -8.74228e-08, -0.226, 0.341458, 0.286564 )
@@ -88,7 +88,7 @@ material/0 = ExtResource( 5 )
 [node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance2/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="cubes"]
 transform = Transform( -3.85605e-08, 1.32324, 7.71211e-08, 0, -6.55671e-08, 2, 1, 6.55671e-08, 3.82137e-15, 0.0707215, 0.341458, 0.832843 )
@@ -98,11 +98,11 @@ material/0 = ExtResource( 5 )
 [node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance3/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="cubes"]
 transform = Transform( 1, 0, 0, 0, 0.847057, 0.531502, 0, -0.531502, 0.847057, 0.205825, 1.54918, 0.82775 )
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance4"]
@@ -207,7 +207,7 @@ transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.70823
 transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
 
 [node name="Door" parent="." instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -2.22623, 0.733984, 2.27866 )
+transform = Transform( 1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, -1.12684, 0.733984, 2.27866 )
 
 [node name="buttons" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0084666, 0.543288, 2.26952 )

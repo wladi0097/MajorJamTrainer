@@ -73,7 +73,7 @@ transform = Transform( -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -0.4435
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.523355, -0.729833 )
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.706266, 0.734243, -2.12879 )
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -0.706266, 0.734243, -1.13323 )
 
 [node name="MeshInstance" parent="." instance=ExtResource( 6 )]
 transform = Transform( -6.20503e-09, 0, 0.141955, 0, 1, 0, -1, 0, -4.37114e-08, 0.643065, 0.254555, -0.725758 )

@@ -5,6 +5,12 @@ onready var unknownEntity = $unkownEntity
 onready var editEntity = $editEntity
 onready var entityIdText = $editEntity/editEntityText
 onready var invertGravityCheckBox = $editEntity/invertGravity
+onready var sizeContainer = $editEntity/SizeContainer
+onready var sizeUpButton = $editEntity/SizeContainer/SizeUpButton
+onready var sizeDownButton = $editEntity/SizeContainer/SizeDownButton
+
+const maxSize = 2
+const minSize = 0
 
 var currentEntity: HackableEntity = null
 
@@ -52,6 +58,9 @@ func _on_entityIdInput_text_entered(new_text):
 	self._on_fetchEntityId_button_up()
 
 
+func enableSizeModifiers():
+	sizeContainer.visible = true
+
 func _on_SizeUpButton_button_down():
 	if currentEntity.sizeCheckArea == null:
 		return
@@ -59,18 +68,24 @@ func _on_SizeUpButton_button_down():
 	print(overlappingBodies)
 	if !overlappingBodies.empty():
 		return
-	if currentEntity.currentSize >= 3:
+	if currentEntity.currentSize >= maxSize:
 		return
 	currentEntity.scale *= 2
 	currentEntity.currentSize += 1
 	currentEntity.add_force(Vector3(0,0,0.1), Vector3(0,0,1))
+	if currentEntity.currentSize == maxSize:
+		sizeUpButton.disabled = true
+	sizeDownButton.disabled = false
 
 
 func _on_SizeDownButton_button_down():
 	if currentEntity.sizeCheckArea == null:
 		return
-	if currentEntity.currentSize <= 0:
+	if currentEntity.currentSize <= minSize:
 		return
 	currentEntity.scale /= 2
 	currentEntity.currentSize -= 1
 	currentEntity.add_force(Vector3(0,0,0.1), Vector3(0,0,1))
+	if currentEntity.currentSize == minSize:
+		sizeDownButton.disabled = true
+	sizeUpButton.disabled = false
