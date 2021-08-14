@@ -1,0 +1,733 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://levels/level_06.gd" type="Script" id=1]
+[ext_resource path="res://entities/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://models/meshes.meshlib" type="MeshLibrary" id=3]
+[ext_resource path="res://entities/Wire.tscn" type="PackedScene" id=4]
+[ext_resource path="res://models/Laserbase.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/Block.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/Laser.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/Door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://models/glas.tres" type="Material" id=9]
+[ext_resource path="res://textures/wood.jpg" type="Texture" id=10]
+[ext_resource path="res://textures/wall.jpg" type="Texture" id=11]
+
+[sub_resource type="Environment" id=1]
+
+[sub_resource type="SpatialMaterial" id=5]
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 5 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_texture = ExtResource( 11 )
+
+[node name="Level_06" type="Spatial"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0.764866 )
+script = ExtResource( 1 )
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 3 )
+use_in_baked_light = true
+cell_size = Vector3( 0.5, 0.5, 0.5 )
+data = {
+"cells": PoolIntArray( 0, 0, 786433, 2, 0, 1114113, 4, 0, 786433, 6, 0, 1114113, 65532, 0, 786433, 65534, 0, 786433, 65543, 0, 1179648, 131069, 0, 327680, 196604, 0, 1114113, 196615, 0, 1179648, 262139, 0, 1048576, 262144, 0, 1507329, 262146, 0, 1507329, 262148, 0, 1507329, 262150, 0, 1507329, 327676, 0, 1507329, 327678, 0, 1507329, 65538, 1, 524288, 65540, 1, 524288, 65542, 1, 524288, 196610, 1, 524288, 196612, 1, 524288, 196614, 1, 524288, 0, 2, 1114113, 65532, 2, 786433, 65534, 2, 1114113, 65537, 2, 458752, 131069, 2, 1310720, 196604, 2, 1114113, 196609, 2, 458752, 262144, 2, 1507329, 262148, 2, 1507329, 262150, 2, 1507329, 327676, 2, 1507329, 327678, 2, 1507329, 65536, 3, 524288, 131070, 3, 524288, 196608, 3, 524288, 262140, 3, 524288, 262142, 3, 524288, 327676, 4, 1507329, 6, 65530, 393217, 65543, 65530, 1179648, 131078, 65530, 917505, 65536, 65531, 0, 65538, 65531, 131072, 65540, 65531, 0, 131070, 65531, 0, 196608, 65531, 0, 196610, 65531, 0, 196612, 65531, 0, 262142, 65531, 65536, 0, 65532, 1114113, 2, 65532, 1114113, 4, 65532, 1114113, 6, 65532, 393217, 65534, 65532, 1114113, 65543, 65532, 1179648, 131069, 65532, 1048576, 131071, 65532, 1310720, 131074, 65532, 393217, 131078, 65532, 917505, 196606, 65532, 393217, 196613, 65532, 851968, 262141, 65532, 983040, 262144, 65532, 1507329, 262146, 65532, 1507329, 262148, 65532, 1245185, 327676, 65532, 1507329, 327678, 65532, 1507329, 131068, 65533, 65536, 131070, 65533, 0, 196614, 65533, 65536, 0, 65534, 786433, 2, 65534, 786433, 4, 65534, 1114113, 6, 65534, 1114113, 65532, 65534, 786433, 65534, 65534, 786433, 65543, 65534, 851968, 131067, 65534, 1048576, 196604, 65534, 262145, 196615, 65534, 1179648, 262141, 65534, 983040, 262144, 65534, 1507329, 262146, 65534, 1507329, 262148, 65534, 1507329, 262150, 65534, 1507329, 327676, 65534, 1507329, 327678, 65534, 1507329, 131068, 65535, 589824, 262140, 65535, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
+}
+
+[node name="cubes" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98023e-07, 1.53184e-05, 2.44379e-06 )
+
+[node name="laser" type="Spatial" parent="."]
+transform = Transform( 1.91069e-15, -4.37114e-08, -1, -0.581829, -2.54326e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.46152, 2.00439, -0.550049 )
+
+[node name="Laser3" parent="laser" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, 0.138277, 0.864192 )
+
+[node name="Laserbase" parent="laser/Laser3" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser3" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser4" parent="laser" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, 0.0089069, 0.864192 )
+
+[node name="Laserbase" parent="laser/Laser4" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser4" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser5" parent="laser" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.121462, 0.864192 )
+
+[node name="Laserbase" parent="laser/Laser5" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser5" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser6" parent="laser" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.25287, 0.864192 )
+
+[node name="Laserbase" parent="laser/Laser6" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser6" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser7" parent="laser" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.387409, 0.864192 )
+
+[node name="Laserbase" parent="laser/Laser7" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser7" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser8" parent="laser" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.517778, 0.864192 )
+
+[node name="Laserbase" parent="laser/Laser8" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser8" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser9" parent="laser" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.649186, 0.864192 )
+
+[node name="Laserbase" parent="laser/Laser9" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser/Laser9" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Door" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, -2.08548, 1.73399, 1.19438 )
+
+[node name="buttons" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0084666, 0.543288, 2.26952 )
+
+[node name="laserDoorButton" parent="buttons" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.01537, 0.273243, -0.764932 )
+
+[node name="doorButton" parent="buttons" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12957, 0.978118, -2.09415 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.358327, 1.17914, 2.25358 )
+light_energy = 0.5
+spot_angle = 30.0
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29165, 1.52134, -0.205161 )
+light_energy = 0.5
+omni_range = 3.0
+omni_attenuation = 1.23114
+
+[node name="Block2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77311, 0.53673, -0.784066 )
+id = "801"
+
+[node name="laser2" type="Spatial" parent="."]
+transform = Transform( 2.54326e-08, -1.06581e-14, -1, -1.82788e-08, 1, -1.06581e-14, 0.879137, -2.76191e-08, 6.60474e-08, -0.446432, 2.07482, -1.39189 )
+
+[node name="Laser7" parent="laser2" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.387409, 0.864192 )
+
+[node name="Laserbase" parent="laser2/Laser7" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser2/Laser7" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser8" parent="laser2" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.517778, 0.864192 )
+
+[node name="Laserbase" parent="laser2/Laser8" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser2/Laser8" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser9" parent="laser2" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.649186, 0.864192 )
+
+[node name="Laserbase" parent="laser2/Laser9" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser2/Laser9" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser10" parent="laser2" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.775839, 0.864192 )
+
+[node name="Laserbase" parent="laser2/Laser10" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser2/Laser10" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Block3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56248, 0.484835, -0.894359 )
+id = "824"
+
+[node name="laser3" type="Spatial" parent="."]
+transform = Transform( 2.54326e-08, -1, 8.74228e-08, -0.581829, -4.37114e-08, 0, 2.22338e-15, -8.74228e-08, -1, -2.06169, 2.97046, 2.10079 )
+
+[node name="Laser7" parent="laser3" instance=ExtResource( 7 )]
+transform = Transform( -2.95005e-09, 0.825383, -1.11206e-08, -0.1, -1.05771e-07, -3.55271e-15, -5.32907e-15, 6.4703e-08, 0.1, 2.138, -0.387409, 0.864192 )
+
+[node name="Laserbase" parent="laser3/Laser7" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser3/Laser7" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser8" parent="laser3" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.517778, 0.864192 )
+
+[node name="Laserbase" parent="laser3/Laser8" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser3/Laser8" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser9" parent="laser3" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.649186, 0.864192 )
+
+[node name="Laserbase" parent="laser3/Laser9" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser3/Laser9" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser10" parent="laser3" instance=ExtResource( 7 )]
+transform = Transform( -2.95005e-09, 0.825384, -1.11206e-08, -0.1, -1.05771e-07, -3.55271e-15, -5.32907e-15, 6.4703e-08, 0.1, 2.138, -0.387409, 0.72764 )
+
+[node name="Laserbase" parent="laser3/Laser10" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser3/Laser10" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser11" parent="laser3" instance=ExtResource( 7 )]
+transform = Transform( -2.95005e-09, 0.825383, -1.11206e-08, -0.1, -1.05771e-07, -3.55271e-15, -5.32907e-15, 6.4703e-08, 0.1, 2.138, -0.387409, 0.596858 )
+
+[node name="Laserbase" parent="laser3/Laser11" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser3/Laser11" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser12" parent="laser3" instance=ExtResource( 7 )]
+transform = Transform( -2.95005e-09, 0.825383, -1.11206e-08, -0.1, -1.05771e-07, -3.55271e-15, -5.32907e-15, 6.4703e-08, 0.1, 2.138, -0.387409, 0.459201 )
+
+[node name="Laserbase" parent="laser3/Laser12" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser3/Laser12" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 0.270197, -0.822351, 0, 0.385881, 0.575816, 0, 0, 0, 0.501531, 2.20452, 2.2217, -1.78721 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance4/StaticBody"]
+transform = Transform( 1, 1.19209e-07, 0, 0, 1, -1.77636e-15, 5.32907e-15, 0, 1, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance16" type="MeshInstance" parent="."]
+transform = Transform( -0.503597, -4.6251e-08, -6.12941e-09, -1.83149e-07, -9.53613e-08, 0.291669, -2.49802e-08, 0.495945, 2.8983e-09, 0.25, 0.525, -1.747 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance16/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance17" type="MeshInstance" parent="."]
+transform = Transform( -0.11656, -1.0705e-08, -1.41869e-09, -3.78433e-08, -1.97041e-08, 0.0602664, -2.49802e-08, 0.495945, 2.8983e-09, -0.131123, 1.19143, -1.7483 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance17"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance17/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 1.23964e-15, 0, 1, -4.44089e-16, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasWall2" type="MeshInstance" parent="."]
+transform = Transform( 9.76539e-08, -2.0294, -4.57093e-09, 0.525502, -3.98152e-07, 6.39605e-09, -2.01005e-08, -1.13593e-07, 0.0320106, 0.708553, 1.7843, -1.32196 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = ExtResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="GlasWall2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasWall2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance21" type="MeshInstance" parent="."]
+transform = Transform( -0.0533845, -4.9029e-09, -6.49757e-10, -3.26297e-07, -1.69895e-07, 0.519637, -2.49802e-08, 0.495945, 2.8983e-09, 1.6951, 0.729526, -1.76146 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance21"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance21/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance22" type="MeshInstance" parent="."]
+transform = Transform( -0.533616, -7.48856e-08, -2.47789e-15, 0, -2.16784e-08, 0.375425, -8.05738e-08, 0.495945, 1.64104e-08, 2.19173, 0.596754, -2.30985 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance22"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance22/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="Block7" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1728, 0.604498, -1.81486 )
+id = "731"
+
+[node name="GlasWall3" type="MeshInstance" parent="."]
+transform = Transform( 2.28807e-08, -0.475496, -1.07099e-09, 0.143807, -1.08957e-07, 1.75032e-09, -2.01005e-08, -1.13593e-07, 0.0320106, 1.20434, 0.583752, -1.43996 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = ExtResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="GlasWall3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasWall3/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance23" type="MeshInstance" parent="."]
+transform = Transform( -0.495759, -4.55311e-08, -6.03401e-09, -1.83149e-07, -9.53613e-08, 0.291669, -2.49802e-08, 0.495945, 2.8983e-09, 1.22431, 0.0762953, -2.09791 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance23"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance23/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance24" type="MeshInstance" parent="."]
+transform = Transform( -0.495759, -4.55311e-08, -6.03401e-09, -3.20625e-08, -0.0600017, 0.0558732, -2.32281e-08, 0.123937, 0.0270499, 1.22431, 0.250123, -1.50577 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance24"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance24/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance25" type="MeshInstance" parent="."]
+transform = Transform( -0.527996, -7.97251e-08, -3.4849e-15, 0, -4.37114e-09, 0.1, -1.50996e-08, 0.1, 4.37114e-09, 1.20311, 0.466769, -2.15228 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance25"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance25/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasSwitch2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151269, 0, 1.27725 )
+
+[node name="GlasWall" type="MeshInstance" parent="GlasSwitch2"]
+transform = Transform( -1.34849e-08, 0.280237, 7.67161e-18, 1.25904, -9.5392e-07, 1.53241e-08, 2.01005e-08, 1.84606e-15, -0.0320106, -0.951535, 1.16964, -0.0578047 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = ExtResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch2/GlasWall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch2/GlasWall/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="GlasWall3" type="MeshInstance" parent="GlasSwitch2"]
+transform = Transform( -9.67949e-09, -3.0796e-08, 0.0320106, 0.26332, 3.0796e-08, 1.17669e-09, -1.98801e-08, 0.407906, 2.41673e-09, -0.697928, 1.10096, 0.380022 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch2/GlasWall3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch2/GlasWall3/StaticBody"]
+transform = Transform( 1, 5.68434e-14, 8.22623e-16, -3.55271e-15, 1, 2.22045e-16, 3.00403e-14, -5.68434e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasWall4" type="MeshInstance" parent="GlasSwitch2"]
+transform = Transform( -2.01005e-08, -1.78302e-08, 0.0320106, 0.197085, -1.49323e-07, 2.39878e-09, -1.96283e-08, 0.407906, 1.39923e-09, -1.01017, 1.94427, 0.380421 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch2/GlasWall4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch2/GlasWall4/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance16" type="MeshInstance" parent="GlasSwitch2"]
+transform = Transform( -0.422666, -3.88182e-08, -5.14438e-09, -1.83149e-07, -9.53613e-08, 0.291669, -1.91174e-08, 0.379547, 2.21807e-09, -1.07055, 0.081386, 0.354352 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch2/MeshInstance16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch2/MeshInstance16/StaticBody"]
+transform = Transform( 1, 2.13163e-14, -1.4249e-15, -1.42109e-14, 1, 8.88178e-16, -1.64681e-14, 2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasWall6" type="MeshInstance" parent="GlasSwitch2"]
+transform = Transform( -0.37018, 2.67348e-07, 0.0235599, 0.402455, -3.16995e-07, 0.0216705, -1.96283e-08, 0.407906, 1.39923e-09, -0.749883, 1.86974, 0.378673 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch2/GlasWall6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch2/GlasWall6/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="GlasWall7" type="MeshInstance" parent="GlasSwitch2"]
+transform = Transform( -2.01005e-08, -1.78302e-08, 0.0320106, 0.546812, -4.14297e-07, 6.65542e-09, -1.96283e-08, 0.407906, 1.39923e-09, -0.697928, 2.34462, 0.380022 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch2/GlasWall7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch2/GlasWall7/StaticBody"]
+transform = Transform( 1, 5.68434e-14, 8.22623e-16, -3.55271e-15, 1, 2.22045e-16, 3.00403e-14, -5.68434e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasWall" type="MeshInstance" parent="."]
+transform = Transform( -2.53105e-09, 0.0525991, 1.43992e-18, 0.532968, -4.03808e-07, 6.48692e-09, 2.01005e-08, 1.84606e-15, -0.0320106, -1.30185, 1.76412, 1.21832 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasWall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasWall/StaticBody"]
+transform = Transform( 1, -1.7053e-13, 5.32907e-15, 3.84957e-22, 1, 3.17637e-22, -5.68434e-14, 6.77626e-20, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="laser4" type="Spatial" parent="."]
+transform = Transform( 2.54326e-08, -1.06581e-14, -1, -1.82788e-08, 1, -1.06581e-14, 0.879137, -2.76191e-08, 6.60474e-08, -0.446432, 2.4741, -1.39189 )
+
+[node name="Laser7" parent="laser4" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.387409, 0.864192 )
+
+[node name="Laserbase" parent="laser4/Laser7" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser4/Laser7" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser8" parent="laser4" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.517778, 0.864192 )
+
+[node name="Laserbase" parent="laser4/Laser8" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser4/Laser8" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="Laser9" parent="laser4" instance=ExtResource( 7 )]
+transform = Transform( -1.04628e-08, 0.825383, -3.60786e-09, 4.37114e-09, -4.37114e-08, -0.1, -0.1, -1.26763e-07, -4.37114e-09, 2.138, -0.649186, 0.864192 )
+
+[node name="Laserbase" parent="laser4/Laser9" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.708231, -0.0254224, -0.107204 )
+
+[node name="Laserbase2" parent="laser4/Laser9" instance=ExtResource( 5 )]
+transform = Transform( 1, -1.13687e-13, 0, -3.55271e-15, 1, 0, 0, 0, 1, -0.71467, 0.0252294, -0.100411 )
+
+[node name="MeshInstance26" type="MeshInstance" parent="."]
+transform = Transform( -0.202994, -2.96633e-08, -3.8761e-16, 0, -8.58714e-09, 0.0587267, -3.06513e-08, 0.196451, 2.56702e-09, -1.12666, 0.807424, 0.354605 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance26"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance26/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance27" type="MeshInstance" parent="."]
+transform = Transform( -0.202994, -2.96633e-08, -3.8761e-16, 0, -8.58714e-09, 0.0587267, -3.06513e-08, 0.196451, 2.56702e-09, -1.12666, 0.593875, 0.150041 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance27"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance27/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance28" type="MeshInstance" parent="."]
+transform = Transform( -0.202994, -2.96633e-08, -3.8761e-16, 0, -8.58714e-09, 0.0587267, -3.06513e-08, 0.196451, 2.56702e-09, -1.127, 0.384925, -0.052 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance28"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance28/StaticBody"]
+transform = Transform( 1, 1.42109e-14, 3.51459e-16, 0, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance30" type="MeshInstance" parent="."]
+transform = Transform( -0.202994, -2.96633e-08, -3.8761e-16, 0, -8.58714e-09, 0.0587267, -3.06513e-08, 0.196451, 2.56702e-09, -1.12666, 1.01007, 0.557432 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance30"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance30/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="laserButton2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0469, 1.52141, -1.76834 )
+
+[node name="GlasSwitch3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51644, 0, 0.344194 )
+
+[node name="GlasWall" type="MeshInstance" parent="GlasSwitch3"]
+transform = Transform( -1.34849e-08, 0.280237, 7.67161e-18, 1.25904, -9.5392e-07, 1.53241e-08, 2.01005e-08, 1.84606e-15, -0.0320106, -0.951535, 1.16964, -0.0578047 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = ExtResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch3/GlasWall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch3/GlasWall/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance16" type="MeshInstance" parent="GlasSwitch3"]
+transform = Transform( -0.260539, -5.731e-08, -1.92509e-15, 0, -1.65905e-08, 0.291669, -3.93403e-08, 0.379547, 1.27493e-08, -0.942197, 0.081386, 0.354352 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch3/MeshInstance16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch3/MeshInstance16/StaticBody"]
+transform = Transform( 1, 2.13163e-14, -1.4249e-15, -1.42109e-14, 1, 8.88178e-16, -1.64681e-14, 2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasWall7" type="MeshInstance" parent="GlasSwitch3"]
+transform = Transform( -4.36681e-08, -3.0796e-08, 0.0320106, 1.18794, 3.0796e-08, 1.17669e-09, -8.96873e-08, 0.407906, 2.41673e-09, -0.697928, 1.22198, 0.380022 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch3/GlasWall7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch3/GlasWall7/StaticBody"]
+transform = Transform( 1, 5.68434e-14, 8.22623e-16, -3.55271e-15, 1, 2.22045e-16, 3.00403e-14, -5.68434e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasWall8" type="MeshInstance" parent="GlasSwitch3"]
+transform = Transform( -4.36681e-08, -3.0796e-08, 0.0320106, 1.18794, 3.0796e-08, 1.17669e-09, -8.96873e-08, 0.407906, 2.41673e-09, -1.1917, 1.22198, 0.380022 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch3/GlasWall8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch3/GlasWall8/StaticBody"]
+transform = Transform( 1, 5.68434e-14, 8.22623e-16, -3.55271e-15, 1, 2.22045e-16, 3.00403e-14, -5.68434e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="GlasSwitch3"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.945627, 0.580594, 0.199976 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="GlasSwitch3"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.945627, 0.993976, 0.199976 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="GlasSwitch3"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.945627, 1.40432, 0.199976 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="GlasSwitch3"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.945627, 1.80897, 0.199976 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance19" type="MeshInstance" parent="."]
+transform = Transform( -0.603361, -7.48856e-08, -3.97773e-16, 0, -2.16784e-08, 0.0602664, -9.1105e-08, 0.495945, 2.63433e-09, 1.10979, 1.19326, -1.76146 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = SubResource( 8 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance19"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance19/StaticBody"]
+transform = Transform( 1, 2.13163e-14, 6.56871e-15, -3.55271e-15, 1, 4.88498e-15, -4.14372e-13, -2.84217e-14, 0.999999, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasSwitch4" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44382, 0, 0.343689 )
+
+[node name="GlasWall" type="MeshInstance" parent="GlasSwitch4"]
+transform = Transform( -1.34849e-08, 0.280237, 7.67161e-18, 1.25904, -9.5392e-07, 1.53241e-08, 2.01005e-08, 1.84606e-15, -0.0320106, -0.951535, 1.16964, -0.0578047 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = ExtResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch4/GlasWall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch4/GlasWall/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance16" type="MeshInstance" parent="GlasSwitch4"]
+transform = Transform( -0.260539, -5.731e-08, -1.92509e-15, 0, -1.65905e-08, 0.291669, -3.93403e-08, 0.379547, 1.27493e-08, -0.942197, 0.081386, 0.354352 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch4/MeshInstance16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch4/MeshInstance16/StaticBody"]
+transform = Transform( 1, 2.13163e-14, -1.4249e-15, -1.42109e-14, 1, 8.88178e-16, -1.64681e-14, 2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasWall7" type="MeshInstance" parent="GlasSwitch4"]
+transform = Transform( -4.36681e-08, -3.0796e-08, 0.0320106, 1.18794, 3.0796e-08, 1.17669e-09, -8.96873e-08, 0.407906, 2.41673e-09, -0.697928, 1.22198, 0.380022 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch4/GlasWall7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch4/GlasWall7/StaticBody"]
+transform = Transform( 1, 5.68434e-14, 8.22623e-16, -3.55271e-15, 1, 2.22045e-16, 3.00403e-14, -5.68434e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GlasWall8" type="MeshInstance" parent="GlasSwitch4"]
+transform = Transform( -4.36681e-08, -3.0796e-08, 0.0320106, 1.18794, 3.0796e-08, 1.17669e-09, -8.96873e-08, 0.407906, 2.41673e-09, -1.1917, 1.22198, 0.380022 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GlasSwitch4/GlasWall8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GlasSwitch4/GlasWall8/StaticBody"]
+transform = Transform( 1, 5.68434e-14, 8.22623e-16, -3.55271e-15, 1, 2.22045e-16, 3.00403e-14, -5.68434e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="GlasSwitch4"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.945627, 0.580594, 0.199976 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="GlasSwitch4"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.945627, 0.993976, 0.199976 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="GlasSwitch4"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.945627, 1.40432, 0.199976 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="GlasSwitch4"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.945627, 1.80897, 0.199976 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance29" type="MeshInstance" parent="."]
+transform = Transform( -0.0227687, -4.08325e-08, -3.05975e-15, 0, -1.6702e-08, 0.655029, -7.91387e-09, 0.767873, 5.75399e-08, 2.74584, 0.838271, -2.57176 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance29"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance29/StaticBody"]
+transform = Transform( 1, 7.10543e-15, 3.51459e-16, -3.55271e-15, 1, 0, -1.64681e-14, -2.84217e-14, 1, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1.05538e-09, 0, 0.243964, 0, 1, 0, -1, 0, 1.64182e-07, -1.03808, 1.2569, -1.77233 )
+
+[node name="MeshInstance2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -1.73922e-07, 0, 1, 0, 5.01366e-08, 0, 0.265094, -1.24574, 1.2569, -1.50498 )
+
+[node name="MeshInstance3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, -4.37114e-08, -1.8551e-07, 1.83922e-07, -8.56649e-08, 0.519528, -4.37114e-08, -1, -1.15876e-08, -1.24574, 0.728857, -1.24343 )
+
+[node name="MeshInstance5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.418533, 0, -0.041282, 0, 1, 0, 0.908202, 0, 0.0190243, -1.28106, 0.295001, -1.21866 )
+
+[node name="MeshInstance6" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.843345, 0, 0.1311, 0, 1, 0, -0.537373, 0, -0.205746, -2.07539, 1.2569, 0.525015 )
+
+[node name="MeshInstance7" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -0.476177, 0, 1, 0, 1, 0, -2.08144e-08, -1.19082, 1.2569, 1.74591 )
+
+[connection signal="button_disabled" from="buttons/laserDoorButton" to="." method="_on_laserDoorButton_button_disabled"]
+[connection signal="button_enabled" from="buttons/laserDoorButton" to="." method="_on_laserDoorButton_button_enabled"]
+[connection signal="button_disabled" from="buttons/doorButton" to="." method="_on_doorButton_button_disabled"]
+[connection signal="button_enabled" from="buttons/doorButton" to="." method="_on_doorButton_button_enabled"]
+[connection signal="button_disabled" from="laserButton2" to="." method="_on_laserButton_button_disabled"]
+[connection signal="button_enabled" from="laserButton2" to="." method="_on_laserButton_button_enabled"]
