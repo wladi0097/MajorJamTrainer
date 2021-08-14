@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://models/meshes.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://entities/Block.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entities/PlayerUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/Laser.tscn" type="PackedScene" id=4]
 [ext_resource path="res://models/Wall.material" type="Material" id=5]
 [ext_resource path="res://models/Laserbase.tscn" type="PackedScene" id=6]
@@ -44,17 +43,17 @@ data = PoolVector3Array( -0.1, 0.3, 0.1, 0.1, 0.3, 0.1, -0.1, -0.3, 0.1, 0.1, 0.
 material = ExtResource( 5 )
 size = Vector3( 0.4, 0.4, 0.4 )
 
-[sub_resource type="ConcavePolygonShape" id=14]
+[sub_resource type="ConcavePolygonShape" id=11]
 data = PoolVector3Array( -0.2, 0.2, 0.2, 0.2, 0.2, 0.2, -0.2, -0.2, 0.2, 0.2, 0.2, 0.2, 0.2, -0.2, 0.2, -0.2, -0.2, 0.2, 0.2, 0.2, -0.2, -0.2, 0.2, -0.2, 0.2, -0.2, -0.2, -0.2, 0.2, -0.2, -0.2, -0.2, -0.2, 0.2, -0.2, -0.2, 0.2, 0.2, 0.2, 0.2, 0.2, -0.2, 0.2, -0.2, 0.2, 0.2, 0.2, -0.2, 0.2, -0.2, -0.2, 0.2, -0.2, 0.2, -0.2, 0.2, -0.2, -0.2, 0.2, 0.2, -0.2, -0.2, -0.2, -0.2, 0.2, 0.2, -0.2, -0.2, 0.2, -0.2, -0.2, -0.2, 0.2, 0.2, 0.2, -0.2, 0.2, 0.2, 0.2, 0.2, -0.2, -0.2, 0.2, 0.2, -0.2, 0.2, -0.2, 0.2, 0.2, -0.2, -0.2, -0.2, 0.2, 0.2, -0.2, 0.2, -0.2, -0.2, -0.2, 0.2, -0.2, 0.2, 0.2, -0.2, -0.2, -0.2, -0.2, -0.2 )
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=12]
 albedo_color = Color( 0.168627, 0.168627, 0.168627, 1 )
 
-[sub_resource type="CapsuleMesh" id=12]
+[sub_resource type="CapsuleMesh" id=13]
 radius = 0.005
 mid_height = 2.0
 
-[sub_resource type="Environment" id=13]
+[sub_resource type="Environment" id=14]
 
 [node name="level_05" type="Spatial"]
 script = ExtResource( 10 )
@@ -164,7 +163,7 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="cubes/MeshInstance8"]
 
 [node name="CollisionShape" type="CollisionShape" parent="cubes/MeshInstance8/StaticBody"]
-shape = SubResource( 14 )
+shape = SubResource( 11 )
 
 [node name="laser" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22375, 0.548776, 0.236953 )
@@ -249,16 +248,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202904, 0, 0 )
 
 [node name="MeshInstance8" parent="cables" instance=ExtResource( 9 )]
 transform = Transform( -1, 0, -5.96318e-08, 0, 1, 0, 1.52732e-07, 0, -0.932852, 0.723134, 0.653534, 0.160249 )
-material_override = SubResource( 11 )
-mesh = SubResource( 12 )
+material_override = SubResource( 12 )
+mesh = SubResource( 13 )
 
 [node name="MeshInstance11" parent="cables" instance=ExtResource( 9 )]
 transform = Transform( 1.45378e-07, 0, -0.690357, 0, 1, 0, 1, 0, 1.00408e-07, -0.451491, 0.253119, 2.22191 )
-material_override = SubResource( 11 )
-mesh = SubResource( 12 )
+material_override = SubResource( 12 )
+mesh = SubResource( 13 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 13 )
+environment = SubResource( 14 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269238, 0.776108, -0.620753 )
@@ -269,8 +268,6 @@ omni_range = 2.0
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.358327, 1.17914, 2.25358 )
 light_energy = 0.5
 spot_angle = 30.0
-
-[node name="HContainer" parent="." instance=ExtResource( 3 )]
 
 [connection signal="button_disabled" from="buttons/doorButton" to="." method="_on_doorButton_button_disabled"]
 [connection signal="button_enabled" from="buttons/doorButton" to="." method="_on_doorButton_button_enabled"]
