@@ -29,6 +29,7 @@ size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )
 
 [node name="Credits" type="CanvasLayer" parent="LeftBar"]
+layer = 2
 offset = Vector2( -1000, 0 )
 transform = Transform2D( 1, 0, 0, 1, -1000, 0 )
 
@@ -73,6 +74,7 @@ __meta__ = {
 }
 
 [node name="HackUi" type="CanvasLayer" parent="LeftBar"]
+layer = 2
 offset = Vector2( -500, 0 )
 transform = Transform2D( 1, 0, 0, 1, -500, 0 )
 
