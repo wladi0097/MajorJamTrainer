@@ -140,7 +140,13 @@ spot_angle = 30.0
 
 [node name="OmniLight2" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29165, 1.52134, -0.205161 )
-light_energy = 0.5
+light_energy = 0.6
+omni_range = 3.0
+omni_attenuation = 1.23114
+
+[node name="OmniLight3" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18306, 1.52134, -0.205161 )
+light_energy = 0.6
 omni_range = 3.0
 omni_attenuation = 1.23114
 
