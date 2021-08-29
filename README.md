@@ -1,4 +1,5 @@
 # MajorJamTrainer
+![cover](https://raw.githubusercontent.com/wladi0097/MajorJamTrainer/main/misc/cover.png)
 
 ### !! [Live Web version](https://wladi0097.github.io/MajorJamTrainer//) !!
 
